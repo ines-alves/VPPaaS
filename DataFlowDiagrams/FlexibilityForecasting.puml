@@ -1,0 +1,79 @@
+@startuml
+title Flexibility Forecasting (AI-Driven)
+
+participant "Camunda\n(Timer: every 15 min)" as C
+participant "Kong\n(API Gateway)" as K
+actor "User\n(Camunda UI)" as User
+participant "Prosumer MS" as PMS
+participant "FlexibilityEmission MS" as FEMS
+participant "Telemetry MS" as TMS
+participant "FlexibilityForecasting MS" as FFMS
+participant "Ollama Server" as Ollama
+database "AWS RDS" as DB
+
+note over C
+ Timer trigger: every 15 min
+end note
+
+== Phase 1: Data Gathering ==
+
+C -> K : GET /Prosumer
+K -> PMS : GET /Prosumer
+PMS --> K : 200 OK [Prosumer[]]
+K --> C : 200 OK {ProsumerList}
+
+alt No prosumers found (ProsumerList empty)
+  note over C : Process ends — no prosumers to evaluate
+end
+
+C -> User : User Task: Decide Data for Flexibility Forecasting\n(select prosumerID from ProsumerList)
+User --> C : prosumerID selected (prosumerID resolved from ProsumerList)
+
+C -> K : GET /FlexibilityOffer/prosumer/{prosumerID}
+K -> FEMS : GET /FlexibilityOffer/prosumer/{prosumerID}
+FEMS --> K : 200 OK [FlexibilityOffer[]]
+K --> C : 200 OK {FlexibilityEventsList}
+
+alt No flexibility events found (FlexibilityEventsList empty)
+  note over C : Process ends — no events to forecast
+end
+
+== Phase 2: Per-Event AI Analysis ==
+
+loop for each flexibilityEvent in FlexibilityEventsList
+
+  C -> K : GET /Telemetry/asset/{flexibilityEvent.assetId}
+  K -> TMS : GET /Telemetry/asset/{assetId}
+  TMS --> K : 200 OK {TelemetryDto}
+  K --> C : 200 OK {Telemetry}
+
+  C -> K : POST /FlexibilityForecasting/buildPrompt\n{"flexibilityEvent": flexibilityEvent,\n"telemetry": Telemetry, "prosumerID": prosumerID}
+  K -> FFMS : POST /FlexibilityForecasting/buildPrompt
+  FFMS -> FFMS : ForecastingRuleEngine.buildPrompt()
+  FFMS --> K : 200 OK (prompt plain text)
+  K --> C : 200 OK {prompt}
+
+  C -> K : POST /api/generate\n{"model": "llama3.2:latest", "prompt": prompt, "stream": false}
+  K -> Ollama : POST /api/generate
+  Ollama --> K : 200 OK {"response": "<LLM JSON text>", ...}
+  K --> C : 200 OK {forecast}
+
+  C -> K : POST /FlexibilityForecasting/createForecast\n{"forecast": forecast}
+  K -> FFMS : POST /FlexibilityForecasting/createForecast
+  FFMS -> FFMS : createForecastFromOllamaResponse()
+  FFMS -> DB : INSERT INTO flexibility_forecasts\n(id, prosumer_id, asset_id, forecast_type,\npredicted_soc_percent, recommendation,\nconfidence_score, timestamp)
+  DB --> FFMS : saved
+  FFMS --> K : 201 Created {FlexibilityForecast}
+  K --> C : 201 Created
+
+end
+
+== Phase 3: Human Review ==
+
+C -> User : User Task: Check Flexibility Forecasting Creation\n(review forecast results)
+User --> C : reviewed
+
+C -> User : User Task: Accept Flexibility Forecast Creation
+User --> C : accepted — process ends
+
+@enduml

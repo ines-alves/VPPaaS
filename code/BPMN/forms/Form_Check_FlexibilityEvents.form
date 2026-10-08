@@ -1,0 +1,72 @@
+{
+  "components": [
+    {
+      "label": "Flexibility Events",
+      "components": [
+        {
+          "label": "Offer ID",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1ymbar4",
+            "columns": null
+          },
+          "id": "Field_16o7vt6",
+          "key": "id",
+          "disabled": true
+        },
+        {
+          "label": "Asset ID",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1ymbar4",
+            "columns": null
+          },
+          "id": "Field_15h712g",
+          "key": "assetId",
+          "disabled": true
+        },
+        {
+          "label": "Offer Type",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1ymbar4",
+            "columns": null
+          },
+          "id": "Field_1n0bm3s",
+          "key": "offerType",
+          "disabled": true
+        },
+        {
+          "label": "Accept?",
+          "type": "checkbox",
+          "layout": {
+            "row": "Row_1ymbar4",
+            "columns": null
+          },
+          "id": "Field_0x34y31",
+          "key": "isAccepted"
+        }
+      ],
+      "showOutline": true,
+      "isRepeating": true,
+      "allowAddRemove": false,
+      "defaultRepetitions": 1,
+      "type": "dynamiclist",
+      "layout": {
+        "row": "Row_0n1tn3l",
+        "columns": null
+      },
+      "id": "Field_1h2vakp",
+      "path": "FlexibilityEventsList"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Accept_FlexibilityEvents",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.1"
+  },
+  "schemaVersion": 19
+}

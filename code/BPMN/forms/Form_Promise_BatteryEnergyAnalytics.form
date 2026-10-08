@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "label": "Is it possible to promise Battery Energy Analytics?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0rngrmh",
+        "columns": null
+      },
+      "id": "Field_04nhfrz",
+      "key": "promise"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Promise_BatteryEnergyAnalytics",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.1"
+  },
+  "schemaVersion": 19
+}

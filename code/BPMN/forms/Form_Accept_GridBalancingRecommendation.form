@@ -1,0 +1,34 @@
+{
+  "components": [
+    {
+      "label": "Recommendation",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1",
+        "columns": null
+      },
+      "id": "Field_recommendation",
+      "key": "recommendation.recommendation",
+      "disabled": true
+    },
+    {
+      "label": "Accept?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_2",
+        "columns": null
+      },
+      "id": "Field_accept",
+      "key": "accept"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Accept_GridBalancingRecommendation",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.1"
+  },
+  "schemaVersion": 19
+}

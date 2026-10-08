@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "label": "Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0h3ywbi",
+        "columns": null
+      },
+      "id": "Field_0sppgut",
+      "key": "name",
+      "description": "Utility Operator name"
+    },
+    {
+      "label": "Location",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0hds74y",
+        "columns": null
+      },
+      "id": "Field_1ykgxfy",
+      "key": "location",
+      "description": "Utility Operator Location"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Request_UtilityOperatorMng",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.1"
+  },
+  "schemaVersion": 19
+}

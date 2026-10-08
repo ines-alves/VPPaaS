@@ -1,0 +1,12 @@
+# Terraform
+*.hcl
+*.tfstate
+*.tfstate.*
+
+# Credentials — never commit these
+access.sh
+*.pem
+
+# macOS
+.DS_Store
+*darwin_arm64*

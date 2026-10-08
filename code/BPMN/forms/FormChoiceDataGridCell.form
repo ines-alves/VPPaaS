@@ -1,0 +1,72 @@
+{
+  "components": [
+    {
+      "text": "=UtilityOperatorList",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ahq8d1",
+        "columns": null
+      },
+      "id": "Field_0vslqd0"
+    },
+    {
+      "label": "UtilityOperatorID to choose?",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ahq8d1",
+        "columns": null
+      },
+      "id": "Field_0zz8pe9",
+      "key": "utilityOperatorID"
+    },
+    {
+      "label": "Grid Cell id",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0be6ch9",
+        "columns": null
+      },
+      "id": "Field_0dk490j",
+      "key": "gridCellID"
+    },
+    {
+      "label": "Address",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0xvvn57",
+        "columns": null
+      },
+      "id": "Field_0fy8soh",
+      "key": "address"
+    },
+    {
+      "label": "Postal Code",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0vs9xwx",
+        "columns": null
+      },
+      "id": "Field_1ov4fkg",
+      "key": "postalCode"
+    },
+    {
+      "label": "Max Capacity (kw)",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1446zss",
+        "columns": null
+      },
+      "id": "Field_0ohcmo2",
+      "key": "maxCapacity"
+    }
+  ],
+  "type": "default",
+  "id": "Form_ChoiceDataGridCell",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.1"
+  },
+  "schemaVersion": 19
+}

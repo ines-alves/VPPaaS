@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "label": "Is the creation of asset acceptable?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1wauwqo",
+        "columns": null
+      },
+      "id": "Field_062mj9s",
+      "key": "accept",
+      "defaultValue": true
+    }
+  ],
+  "type": "default",
+  "id": "Form_Accept_AssetCreation",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.1"
+  },
+  "schemaVersion": 19
+}

@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "label": "Is it possible to promise the request?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0f81kbd",
+        "columns": null
+      },
+      "id": "Field_0s88yvd",
+      "key": "promise"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Promise_GridCellMng",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.1"
+  },
+  "schemaVersion": 19
+}

@@ -1,0 +1,57 @@
+{
+  "components": [
+    {
+      "text": "=ProsumerList",
+      "type": "text",
+      "layout": {
+        "row": "Row_14iparu",
+        "columns": null
+      },
+      "id": "Field_1lf0dzp"
+    },
+    {
+      "label": "ProsumerID to choose?",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_14iparu",
+        "columns": null
+      },
+      "id": "Field_0oq4dot",
+      "key": "prosumerID"
+    },
+    {
+      "label": "Asset type?",
+      "values": [
+        {
+          "label": "Battery",
+          "value": "BATTERY"
+        },
+        {
+          "label": "Solar Inverter",
+          "value": "SOLAR"
+        },
+        {
+          "label": "EV Charger",
+          "value": "EV_CHARGER"
+        }
+      ],
+      "type": "select",
+      "layout": {
+        "row": "Row_0p9cmm2",
+        "columns": null
+      },
+      "id": "Field_0g6bkk7",
+      "key": "assetType",
+      "defaultValue": "BATTERY"
+    }
+  ],
+  "type": "default",
+  "id": "FormChoiceDataAssetCreation",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.9.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.1"
+  },
+  "schemaVersion": 19
+}
